@@ -1,22 +1,197 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pro MERN Stack</title>
 
   <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
   <script src="https://unpkg.com/@babel/polyfill@7/dist/polyfill.min.js"></script>
+
   <style>
-    table.bordered-table th, td {border: 1px solid silver; padding: 4px;}
-    table.bordered-table {border-collapse: collapse;}
+    /* General Styling */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center; /* Center all text inside the container */
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    /* Table Styling */
+    .bordered-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .bordered-table th, .bordered-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center; /* Center content in table cells */
+    }
+
+    .bordered-table th {
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+    }
+
+    .bordered-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .bordered-table tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Form Styling */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    form input {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      padding: 10px;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #4cae4c;
+    }
+
+    /* Navigation Button Styles */
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Seat Grid Styling */
+    .seat-grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      grid-gap: 10px;
+      justify-items: center; /* Center seats horizontally */
+      margin-top: 20px;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background-color: #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .seat.occupied {
+      background-color: grey;
+    }
+
+    .seat.extra-legroom {
+      background-color: orange;
+    }
+
+    .seat.forward-zone {
+      background-color: darkgreen;
+      color: white;
+    }
+
+    .seat.standard-seat {
+      background-color: lightgreen;
+    }
+
+    .seat:hover {
+      opacity: 0.8;
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .legend-box {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      border: 1px solid #333;
+      border-radius: 4px;
+    }
+
+    .extra-legroom-legend {
+      background-color: orange;
+    }
+
+    .forward-zone-legend {
+      background-color: darkgreen;
+    }
+
+    .standard-seat-legend {
+      background-color: lightgreen;
+    }
   </style>
 </head>
 
 <body>
-  <div id="contents"></div>
+  <div id="contents" class="container"></div>
 
   <script src="/App.js"></script>
 </body>
