@@ -44,6 +44,10 @@ The project consists of the following files:
     - Displays a table of current travellers, showing their name, phone number, seat number, and email.
 
 ## Setup Instructions
+- npm install
+- npm run compile
+- npm start
+
 
 ### Prerequisites
 - Node.js
